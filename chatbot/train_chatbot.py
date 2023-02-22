@@ -65,3 +65,21 @@ train_y = list(training[:,1])
 
 # build the model
 model = Sequential()
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(train_y[0]), activation='softmax'))
+
+# compile the model
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+
+# fit the model
+model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+
+# save the trained model to disk
+model.save('models/model.tflearn')
+
+# save all of our data structures
+pickle.dump({'words': words, 'classes': classes, 'train_x': train_x, 'train_y': train_y}, open('models/training_data', 'wb'))
