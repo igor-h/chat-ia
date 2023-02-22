@@ -1,0 +1,50 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "Hello",
+                "Hey",
+                "Hi",
+                "Hola"
+            ],
+            "responses": [
+                "Hi there! How can I assist you?",
+                "Hello! How can I help you?",
+                "Hey! How may I assist you?",
+                "Hi! How can I help you today?",
+                "Hola! How can I assist you?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "See ya"
+            ],
+            "responses": [
+                "Goodbye! Have a nice day.",
+                "See you later!",
+                "Bye! Take care.",
+                "Have a nice day! Goodbye."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "Appreciate it"
+            ],
+            "responses": [
+                "You're welcome!",
+                "No problem!",
+                "Anytime!",
+                "Glad I could help."
+            ]
+        }
+    ]
+}
