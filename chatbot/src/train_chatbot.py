@@ -6,16 +6,16 @@ import json
 import pickle
 
 import numpy as np
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.optimizers import SGD
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.optimizers import SGD
 
 words = []
 classes = []
 documents = []
 ignore_words = ['?', '!']
 
-with open('data/intents.json', 'r') as file:
+with open('../data/intents.json', 'r') as file:
     intents = json.load(file)
 
 for intent in intents['intents']:
@@ -82,4 +82,9 @@ model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbos
 model.save('models/model.tflearn')
 
 # save all of our data structures
-pickle.dump({'words': words, 'classes': classes, 'train_x': train_x, 'train_y': train_y}, open('models/training_data', 'wb'))
+pickle.dump({
+        'words': words,
+        'classes': classes,
+        'train_x': train_x,
+        'train_y': train_y},
+    open('../models/training_data.py', 'wb'))

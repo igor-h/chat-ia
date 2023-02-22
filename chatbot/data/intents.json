@@ -7,14 +7,19 @@
                 "Hello",
                 "Hey",
                 "Hi",
-                "Hola"
+                "Hola",
+                "What's up",
+                "Good morning",
+                "Good afternoon"
             ],
             "responses": [
                 "Hi there! How can I assist you?",
                 "Hello! How can I help you?",
                 "Hey! How may I assist you?",
                 "Hi! How can I help you today?",
-                "Hola! How can I assist you?"
+                "Hola! How can I assist you?",
+                "Nice to meet you.",
+                "Good day!"
             ]
         },
         {
@@ -23,13 +28,15 @@
                 "Bye",
                 "See you later",
                 "Goodbye",
-                "See ya"
+                "See ya",
+                "Catch you later"
             ],
             "responses": [
                 "Goodbye! Have a nice day.",
                 "See you later!",
                 "Bye! Take care.",
-                "Have a nice day! Goodbye."
+                "Have a nice day! Goodbye.",
+                "Bye!"
             ]
         },
         {
@@ -37,14 +44,26 @@
             "patterns": [
                 "Thanks",
                 "Thank you",
-                "Appreciate it"
+                "Appreciate it",
+                "Thank you so much"
             ],
             "responses": [
                 "You're welcome!",
                 "No problem!",
                 "Anytime!",
-                "Glad I could help."
+                "Glad I could help.",
+                "My pleasure."
             ]
+        },
+        {
+          "tag": "help",
+          "patterns": ["Can you help me?", "I need assistance", "Help me please", "Can you assist me?"],
+          "responses": ["Of course! What do you need help with?", "How can I assist you?", "I'd be happy to help. What's the problem?"]
+        },
+        {
+          "tag": "weather",
+          "patterns": ["What's the weather like?", "Is it going to rain?", "What's the temperature?", "Will it be hot today?"],
+          "responses": ["I'm not sure. You might want to check a weather app.", "I don't have that information. Sorry!"]
         }
     ]
 }

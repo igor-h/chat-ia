@@ -1,0 +1,74 @@
+{
+    "optimizer": "adam",
+    "loss": "categorical_crossentropy",
+    "metric": "accuracy",
+    "architectures": [
+        {
+            "type": "fully_connected",
+            "activation": "ReLU",
+            "units": 128
+        },
+        {
+            "type": "dropout",
+            "rate": 0.5
+        },
+        {
+            "type": "fully_connected",
+            "activation": "ReLU",
+            "units": 64
+        },
+        {
+            "type": "dropout",
+            "rate": 0.5
+        },
+        {
+            "type": "fully_connected",
+            "activation": "softmax",
+            "units": 5
+        }
+    ],
+    "train_vars": {
+        "global_step": {
+            "value": 0,
+            "trainable": false
+        }
+    },
+    "training_step": {
+        "learning_rate": 0.001,
+        "batch_size": 16,
+        "name": "Adam",
+        "momentum": 0.9
+    },
+    "model_vars": {
+        "dense_1": {
+            "weights": {
+                "value": [[0.3, 0.2, 0.5, 0.1, 0.4, 0.8], ... ],
+                "trainable": true
+            },
+            "bias": {
+                "value": [0.0, 0.2, 0.1, 0.0, 0.3, 0.0],
+                "trainable": true
+            }
+        },
+        "dense_2": {
+            "weights": {
+                "value": [[0.4, 0.1, 0.5, 0.0, 0.1], ... ],
+                "trainable": true
+            },
+            "bias": {
+                "value": [0.0, 0.1, 0.2, 0.0, 0.0],
+                "trainable": true
+            }
+        },
+        "dense_3": {
+            "weights": {
+                "value": [[0.7, 0.1, 0.2, 0.0, 0.6], ... ],
+                "trainable": true
+            },
+            "bias": {
+                "value": [0.1, 0.0, 0.0, 0.0, 0.1],
+                "trainable": true
+            }
+        }
+    }
+}

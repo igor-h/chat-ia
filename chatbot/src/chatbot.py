@@ -6,12 +6,12 @@ import nltk
 import numpy as np
 import tensorflow as tf
 from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 
 lemmatizer = WordNetLemmatizer()
 
-with open('models/training_data', 'rb') as file:
+with open('../models/training_data.py', 'rb') as file:
     data = pickle.load(file)
 
 with open('intents.json', 'r') as file:
